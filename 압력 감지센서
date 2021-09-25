@@ -1,0 +1,29 @@
+int SensorPin = A0; //analog pin
+int G = 3; // led
+int R = 7;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(G, OUTPUT);
+  pinMode(R, OUTPUT);
+
+}
+ 
+void loop(){
+  int SensorReading = analogRead(SensorPin);
+  
+  int mfsr_r18 = map(SensorReading, 0, 1024, 0, 255);
+  Serial.println(mfsr_r18);
+  
+  if(mfsr_r18 < 253)
+  {
+    digitalWrite(G, LOW);
+  	digitalWrite(R, HIGH);
+  }
+  else
+  {
+    digitalWrite(G, HIGH);
+  	digitalWrite(R, LOW);
+  }
+  
+}
