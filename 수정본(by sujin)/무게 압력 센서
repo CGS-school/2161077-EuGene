@@ -1,5 +1,5 @@
 #define SP A0 // SensorPin
-#define GL 8 // grenn led 
+#define GL 8 // green led 
 #define RL 7 // red led
 
 void setup(){
